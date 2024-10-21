@@ -7,6 +7,12 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import numpy as np
 import plotly.express as px
+# Load the spaCy model
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    # If the model is not found, display an error message in the app
+    st.error("spaCy model 'en_core_web_sm' not found. Make sure the model is downloaded and installed properly.")
 #Title
 st.title('🔍 Decoding Customer Sentiments ')
 st.write('***')
