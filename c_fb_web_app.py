@@ -11,15 +11,18 @@ import streamlit as st
 import spacy
 import os
 
-# Ensure the model is installed and then load it
-try:
-    nlp = spacy.load("en_core_web_sm")
-except OSError:
-    # If the model is not found, try downloading it again
-    st.warning("Model not found. Attempting to download...")
-    os.system('python -m spacy download en_core_web_sm')
-    nlp = spacy.load("en_core_web_sm")  # Load it again after download
+# Function to check if spaCy model is installed
+def load_spacy_model():
+    try:
+        nlp = spacy.load("en_core_web_sm")
+        return nlp
+    except OSError:
+        st.warning("spaCy model 'en_core_web_sm' not found. Attempting to download...")
+        os.system('python -m spacy download en_core_web_sm')
+        nlp = spacy.load("en_core_web_sm")  # Load it again after download
+        return nlp
 
+nlp = load_spacy_model()
 st.title('🔍 Decoding Customer Sentiments ')
 st.write('***')
 # Sidebar for file upload
