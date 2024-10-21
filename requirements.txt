@@ -9,8 +9,8 @@ seaborn
 nltk
 requests
 spacy
-thinc # Adjust based on compatibility
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz
+thinc 
+en-core-web-sm 
 streamlit
 tensorflow
 torch
