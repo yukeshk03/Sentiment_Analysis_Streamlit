@@ -16,4 +16,4 @@ scipy
 seaborn
 nltk
 requests
-en-core-web-sm==3.4.1 
+en-core-web-sm
