@@ -10,19 +10,27 @@ import plotly.express as px
 import streamlit as st
 import spacy
 import os
+import subprocess
 
-# Function to check if spaCy model is installed
-def load_spacy_model():
+# Check if spaCy model is installed; if not, run the setup script
+try:
+    import spacy
+    # Try loading the model
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    # If the model is not found, display a message and run the setup.sh script
+    st.warning("SpaCy model 'en_core_web_sm' not found. Running setup script to install dependencies...")
+    
+    # Run the setup.sh script to install spaCy and download the model
+    os.system('bash setup.sh')
+    
+    # Try loading the model again after installation
     try:
         nlp = spacy.load("en_core_web_sm")
-        return nlp
     except OSError:
-        st.warning("spaCy model 'en_core_web_sm' not found. Attempting to download...")
-        os.system('python -m spacy download en_core_web_sm')
-        nlp = spacy.load("en_core_web_sm")  # Load it again after download
-        return nlp
+        st.error("Could not load SpaCy model even after running setup script. Please check the setup.")
+        st.stop()
 
-nlp = load_spacy_model()
 st.title('🔍 Decoding Customer Sentiments ')
 st.write('***')
 # Sidebar for file upload
