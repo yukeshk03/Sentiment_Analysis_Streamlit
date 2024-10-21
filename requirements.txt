@@ -1,5 +1,5 @@
 streamlit
-tensorflow
+tensorflow>=2.0.0
 tf-keras
 torch
 torchvision
@@ -11,8 +11,9 @@ matplotlib
 wordcloud
 numpy
 plotly
-pandas  
-scipy  
-seaborn 
-nltk    
-requests 
+pandas
+scipy
+seaborn
+nltk
+requests
+en-core-web-sm==3.4.1 
