@@ -7,13 +7,19 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import numpy as np
 import plotly.express as px
-# Load the spaCy model
+import streamlit as st
+import spacy
+import os
+
+# Ensure the model is installed and then load it
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    # If the model is not found, display an error message in the app
-    st.error("spaCy model 'en_core_web_sm' not found. Make sure the model is downloaded and installed properly.")
-#Title
+    # If the model is not found, try downloading it again
+    st.warning("Model not found. Attempting to download...")
+    os.system('python -m spacy download en_core_web_sm')
+    nlp = spacy.load("en_core_web_sm")  # Load it again after download
+
 st.title('🔍 Decoding Customer Sentiments ')
 st.write('***')
 # Sidebar for file upload
