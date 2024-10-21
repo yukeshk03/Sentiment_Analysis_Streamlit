@@ -1,18 +1,18 @@
-python==3.8.10
-numpy==1.23.4
-pandas==1.4.3
-matplotlib==3.5.1
-plotly==5.10.0
-scikit-learn==1.1.2
-scipy==1.9.1
-seaborn==0.12.1
-nltk==3.7
-requests==2.28.1
-spacy==3.5.3
-thinc==8.0.0  # Adjust based on compatibility
+python
+numpy
+pandas
+matplotlib
+plotly
+scikit-learn
+scipy
+seaborn
+nltk
+requests
+spacy
+thinc # Adjust based on compatibility
 en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0.tar.gz
-streamlit==1.14.0
-tensorflow==2.10.0
-torch==1.13.1
-transformers==4.24.0
-wordcloud==3.0.2
+streamlit
+tensorflow
+torch
+transformers
+wordcloud
