@@ -1,5 +1,5 @@
 streamlit
-tensorflow
+tensorflow>=2.0.0
 tf-keras
 torch
 torchvision
@@ -16,4 +16,3 @@ scipy
 seaborn
 nltk
 requests
-en-core-web-sm
