@@ -12,24 +12,13 @@ import spacy
 import os
 import subprocess
 
-# Check if spaCy model is installed; if not, run the setup script
+
+# Load the spaCy model
 try:
-    import spacy
-    # Try loading the model
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    # If the model is not found, display a message and run the setup.sh script
-    st.warning("SpaCy model 'en_core_web_sm' not found. Running setup script to install dependencies...")
-    
-    # Run the setup.sh script to install spaCy and download the model
-    os.system('bash setup.sh')
-    
-    # Try loading the model again after installation
-    try:
-        nlp = spacy.load("en_core_web_sm")
-    except OSError:
-        st.error("Could not load SpaCy model even after running setup script. Please check the setup.")
-        st.stop()
+    st.error("SpaCy model 'en_core_web_sm' not found. Please ensure it is installed.")
+
 
 st.title('🔍 Decoding Customer Sentiments ')
 st.write('***')
