@@ -1,2 +1,3 @@
-pip install -r requirements.txt
-python -m spacy download en_core_web_sm
+sudo apt-get update
+sudo apt-get install -y build-essential gcc
+
