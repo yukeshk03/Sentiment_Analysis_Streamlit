@@ -1,7 +1,8 @@
 streamlit
 tensorflow
-torch 
-torchvision 
+tf-keras
+torch
+torchvision
 torchaudio
 transformers
 spacy
@@ -10,3 +11,8 @@ matplotlib
 wordcloud
 numpy
 plotly
+pandas  
+scipy  
+seaborn 
+nltk    
+requests 
